@@ -1,15 +1,17 @@
 //
-//  DrinksListTableViewController.swift
+//  OrderListTableViewController.swift
 //  Kebuke
 //
-//  Created by NAI LUN CHEN on 2023/4/26.
+//  Created by NAI LUN CHEN on 2023/4/29.
 //
 
 import UIKit
 
-class DrinksListTableViewController: UITableViewController {
+class OrderListTableViewController: UITableViewController {
     
     var records = [DrinksResponse.Record]()
+    
+    var orders = [OrderDetail]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,8 @@ class DrinksListTableViewController: UITableViewController {
         return records.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(DrinksListTableViewCell.self)", for: indexPath) as! DrinksListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(OrderListTableViewCell.self)", for: indexPath) as! OrderListTableViewCell
         
         let record = records[indexPath.row]
         
@@ -47,7 +48,7 @@ class DrinksListTableViewController: UITableViewController {
         cell.drinkNameLabel.text = field.name
         
         // 飲料概述
-        cell.drinkDescriptionLabel.text = field.description
+        //cell.drinkDescriptionLabel.text = field.description
         
         let drinksImage = field.image[0]
         
@@ -64,6 +65,13 @@ class DrinksListTableViewController: UITableViewController {
             }
         }.resume()
         
+        cell.mediumPriceLabel.text = "中杯：\(field.mediumPrice)"
+        
+        if let largePrice = field.largePrice {
+            cell.largePriceLabel.text = "大杯：\(largePrice)"
+        } else {
+            cell.largePriceLabel.isHidden = true
+        }
 
         // Configure the cell...
 
@@ -102,8 +110,8 @@ class DrinksListTableViewController: UITableViewController {
             }
         }.resume()
     }
-    
-    @IBSegueAction func showDetail(_ coder: NSCoder) -> DrinkDetailViewController? {
+
+    @IBSegueAction func showOrder(_ coder: NSCoder) -> OrderViewController? {
         guard let row = tableView.indexPathForSelectedRow?.row else { return nil }
         
         let record = records[row]
@@ -114,11 +122,43 @@ class DrinksListTableViewController: UITableViewController {
         
         let thumbnails = drinksImage.thumbnails
         
-        let drinkDetailViewController = DrinkDetailViewController(coder: coder)
+        let orderViewController = OrderViewController(coder: coder)
         
-        drinkDetailViewController?.drinkDetail = DrinkDetail(drinkImage: thumbnails.large.url, drinkIntroduction: field.introduction, drinkDescription: field.description, mediumPrice: field.mediumPrice, largePrice: field.largePrice, drinkName: field.name)
+        orderViewController?.drinkDetail = DrinkDetail(drinkImage: thumbnails.large.url, drinkIntroduction: field.introduction, drinkDescription: field.description, mediumPrice: field.mediumPrice, largePrice: field.largePrice, drinkName: field.name)
         
-        return drinkDetailViewController
+        return orderViewController
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if "showCheckList" == identifier, orders.isEmpty {
+            let alertController = UIAlertController(title: "操作錯誤", message: "請先選擇飲料", preferredStyle: .alert)
+
+            alertController.addAction(UIAlertAction(title: "確定", style: .default))
+
+            present(alertController, animated: true)
+            
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    @IBAction func unwindToList(_ unwindSegue: UIStoryboardSegue) {
+        if let source = unwindSegue.source as? OrderViewController,
+           let orderDetail = source.orderDetail {
+            orders.insert(orderDetail, at: 0)
+            //let newIndexPath = IndexPath(row: 0, section: 0)
+            //tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    @IBSegueAction func showCheckList(_ coder: NSCoder) -> CheckListTableViewController? {
+        let checkListTableViewController = CheckListTableViewController(coder: coder)
+
+        checkListTableViewController?.orders = orders
+
+        return checkListTableViewController
     }
     
     /*
@@ -156,14 +196,16 @@ class DrinksListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if "showCheckList" == segue.identifier {
+//            let checkListTableViewController = segue.destination as! CheckListTableViewController
+//
+//            print(orders)
+//
+//            checkListTableViewController.orders = orders
+//        }
+//    }
 }

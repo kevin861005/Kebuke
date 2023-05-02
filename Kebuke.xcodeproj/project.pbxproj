@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21F0FF029FD31EE00CE8E27 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FEF29FD31EE00CE8E27 /* OrderListTableViewController.swift */; };
+		E21F0FF229FD322300CE8E27 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FF129FD322300CE8E27 /* OrderViewController.swift */; };
+		E21F0FF829FE5FBD00CE8E27 /* OrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FF729FE5FBD00CE8E27 /* OrderDetail.swift */; };
+		E21F0FFC29FEC33B00CE8E27 /* CheckListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FFB29FEC33B00CE8E27 /* CheckListTableViewController.swift */; };
+		E21F0FFE29FEEEC200CE8E27 /* OrderDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FFD29FEEEC200CE8E27 /* OrderDetailTableViewCell.swift */; };
+		E21F10002A002A3600CE8E27 /* SugarLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F0FFF2A002A3600CE8E27 /* SugarLevel.swift */; };
 		E237DF4B29F97C0200E467FC /* DrinkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237DF4A29F97C0200E467FC /* DrinkDetailViewController.swift */; };
 		E237DF4D29F97E9500E467FC /* DrinkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E237DF4C29F97E9500E467FC /* DrinkDetail.swift */; };
+		E27C1A1629FD2FD600A7ACB0 /* OrderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C1A1529FD2FD600A7ACB0 /* OrderListTableViewCell.swift */; };
 		E2CC7AA129F8313B000C40FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC7AA029F8313B000C40FB /* AppDelegate.swift */; };
 		E2CC7AA329F8313B000C40FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC7AA229F8313B000C40FB /* SceneDelegate.swift */; };
 		E2CC7AA829F8313B000C40FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CC7AA629F8313B000C40FB /* Main.storyboard */; };
@@ -21,8 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E21F0FEF29FD31EE00CE8E27 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewController.swift; sourceTree = "<group>"; };
+		E21F0FF129FD322300CE8E27 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		E21F0FF729FE5FBD00CE8E27 /* OrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetail.swift; sourceTree = "<group>"; };
+		E21F0FFB29FEC33B00CE8E27 /* CheckListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewController.swift; sourceTree = "<group>"; };
+		E21F0FFD29FEEEC200CE8E27 /* OrderDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E21F0FFF2A002A3600CE8E27 /* SugarLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SugarLevel.swift; sourceTree = "<group>"; };
 		E237DF4A29F97C0200E467FC /* DrinkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailViewController.swift; sourceTree = "<group>"; };
 		E237DF4C29F97E9500E467FC /* DrinkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetail.swift; sourceTree = "<group>"; };
+		E27C1A1529FD2FD600A7ACB0 /* OrderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListTableViewCell.swift; sourceTree = "<group>"; };
 		E2CC7A9D29F8313B000C40FB /* Kebuke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kebuke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CC7AA029F8313B000C40FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CC7AA229F8313B000C40FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,11 +83,18 @@
 				E2CC7AA029F8313B000C40FB /* AppDelegate.swift */,
 				E2CC7AA229F8313B000C40FB /* SceneDelegate.swift */,
 				E2CC7AA629F8313B000C40FB /* Main.storyboard */,
+				E21F0FFD29FEEEC200CE8E27 /* OrderDetailTableViewCell.swift */,
+				E21F0FF129FD322300CE8E27 /* OrderViewController.swift */,
+				E21F0FFB29FEC33B00CE8E27 /* CheckListTableViewController.swift */,
+				E21F0FEF29FD31EE00CE8E27 /* OrderListTableViewController.swift */,
+				E27C1A1529FD2FD600A7ACB0 /* OrderListTableViewCell.swift */,
 				E237DF4C29F97E9500E467FC /* DrinkDetail.swift */,
 				E237DF4A29F97C0200E467FC /* DrinkDetailViewController.swift */,
 				E2CC7AB829F83D98000C40FB /* DrinksListTableViewCell.swift */,
 				E2CC7AB629F83CAC000C40FB /* DrinksListTableViewController.swift */,
 				E2CC7AB429F839FB000C40FB /* DrinksResponse.swift */,
+				E21F0FF729FE5FBD00CE8E27 /* OrderDetail.swift */,
+				E21F0FFF2A002A3600CE8E27 /* SugarLevel.swift */,
 				E2CC7AA929F8313B000C40FB /* Assets.xcassets */,
 				E2CC7AAB29F8313B000C40FB /* LaunchScreen.storyboard */,
 				E2CC7AAE29F8313B000C40FB /* Info.plist */,
@@ -159,8 +180,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2CC7AB729F83CAC000C40FB /* DrinksListTableViewController.swift in Sources */,
+				E21F10002A002A3600CE8E27 /* SugarLevel.swift in Sources */,
+				E21F0FF829FE5FBD00CE8E27 /* OrderDetail.swift in Sources */,
+				E21F0FF229FD322300CE8E27 /* OrderViewController.swift in Sources */,
 				E2CC7AB529F839FB000C40FB /* DrinksResponse.swift in Sources */,
+				E27C1A1629FD2FD600A7ACB0 /* OrderListTableViewCell.swift in Sources */,
 				E237DF4B29F97C0200E467FC /* DrinkDetailViewController.swift in Sources */,
+				E21F0FFE29FEEEC200CE8E27 /* OrderDetailTableViewCell.swift in Sources */,
+				E21F0FF029FD31EE00CE8E27 /* OrderListTableViewController.swift in Sources */,
+				E21F0FFC29FEC33B00CE8E27 /* CheckListTableViewController.swift in Sources */,
 				E2CC7AA129F8313B000C40FB /* AppDelegate.swift in Sources */,
 				E237DF4D29F97E9500E467FC /* DrinkDetail.swift in Sources */,
 				E2CC7AA329F8313B000C40FB /* SceneDelegate.swift in Sources */,

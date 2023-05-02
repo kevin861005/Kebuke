@@ -18,6 +18,8 @@ class DrinkDetailViewController: UIViewController {
         
         drinkIntroduction.text = drinkDetail.drinkIntroduction
         
+        drinkImage.image = UIImage(named: "可不可LOGO")
+        
         fetchImage()
         // Do any additional setup after loading the view.
     }
